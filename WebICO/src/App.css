@@ -18,6 +18,25 @@
   font-size: 0.95em;
 }
 
+/* Tarjeta icono título: elevación al hover */
+.tarjeta-icono-titulo {
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.tarjeta-icono-titulo:hover {
+  box-shadow: 0px 6px 12px -2px rgba(0,0,0,0.25),
+    0px 12px 20px 0px rgba(0,0,0,0.18),
+    0px 2px 24px 0px rgba(0,0,0,0.14);
+  transform: translateY(-4px);
+}
+
+.tarjeta-icono-titulo .icono-tarjeta img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
