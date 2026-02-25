@@ -9,24 +9,25 @@ const BORDER_COLOR = "#ba9a3a";
 const ELEVATION_5 =
   "0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)";
 
-export interface TarjetaIconoTituloProps {
+export interface TarjetaInformacionProps {
   readonly icono: ReactNode;
   readonly titulo: string;
+  /** Descripción con texto justificado */
   readonly descripcion?: string;
-  /** Ruta a la que navegar al hacer clic en la tarjeta (ej. /informacion) */
+  /** Ruta a la que navegar al hacer clic (opcional) */
   readonly to?: string;
   readonly className?: string;
   readonly style?: React.CSSProperties;
 }
 
-export default function TarjetaIconoTitulo({
+export default function TarjetaInformacion({
   icono,
   titulo,
   descripcion,
   to,
   className,
   style,
-}: TarjetaIconoTituloProps) {
+}: TarjetaInformacionProps) {
   const estiloEscalado: React.CSSProperties = {
     width: "100%",
     height: "100%",
@@ -49,9 +50,8 @@ export default function TarjetaIconoTitulo({
 
   const cardContent = (
     <Card
-      className={`tarjeta-icono-titulo ${className ?? ""}`.trim()}
+      className={`tarjeta-informacion ${className ?? ""}`.trim()}
       style={{
-        textAlign: "center",
         border: "none",
         borderRadius: 8,
         boxShadow: ELEVATION_5,
@@ -66,11 +66,11 @@ export default function TarjetaIconoTitulo({
       }}
     >
       <div
-        className="icono-tarjeta"
+        className="icono-tarjeta-informacion"
         style={{
-          width: "50%",
+          width: "90%",
           aspectRatio: "1",
-          marginBottom: 5,
+          marginBottom: 16,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -80,17 +80,26 @@ export default function TarjetaIconoTitulo({
       >
         {iconoEscalable}
       </div>
-      <Text style={{ display: "block", fontSize: 20, fontWeight: 700 }}>
+      <Text
+        style={{
+          display: "block",
+          fontSize: 20,
+          fontWeight: 700,
+          textAlign: "center",
+          marginBottom: descripcion ? 8 : 0,
+        }}
+      >
         {titulo}
       </Text>
       {descripcion ? (
         <Text
           style={{
             display: "block",
-            fontSize: 13,
-            marginTop: 6,
-            lineHeight: 1.4,
-            fontWeight: 500,
+            fontSize: 14,
+            lineHeight: 1.6,
+            fontWeight: 400,
+            textAlign: "justify",
+            whiteSpace: "pre-line",
           }}
         >
           {descripcion}
@@ -98,7 +107,7 @@ export default function TarjetaIconoTitulo({
       ) : null}
       <div
         style={{
-          width: "100%",
+          width: "90%",
           marginLeft: "auto",
           marginRight: "auto",
           marginTop: "auto",

@@ -1,43 +1,53 @@
 import { Row, Col } from "antd";
-import {
-  InfoCircleOutlined,
-  BankOutlined,
-  TeamOutlined,
-  FileTextOutlined,
-} from "@ant-design/icons";
-import TarjetaIconoTitulo from "../components/TarjetaIconoTitulo";
-
-const iconStyle = { fontSize: 48, color: "#032047" };
+import TarjetaInformacion from "../components/TarjetaInformacion";
+import values from "../assets/images/informacion/valoresicon1.png";
+import objectives from "../assets/images/informacion/objetivosicon.png";
+import vision from "../assets/images/informacion/visionicon.png";
+import mission from "../assets/images/informacion/misionicon.png";
 
 export default function Informacion() {
   return (
     <Row gutter={[24, 24]}>
       <Col xs={24} sm={12} md={6}>
-        <TarjetaIconoTitulo
-          icono={<InfoCircleOutlined style={iconStyle} />}
-          titulo="FES Aragón"
-          descripcion="Conoce la Facultad de Estudios Superiores Aragón."
+        <TarjetaInformacion
+          icono={<img src={values} alt="Valores" />}
+          titulo="VALORES"
+          descripcion="• Identificación plena de los valores de la UNAM como los valores de la FES Aragón.
+• Generosidad en todas sus aportaciones al país.
+• Responsabilidad en el estudio de problemas y temas nacionales.
+• Compromiso con la sociedad mexicana.
+• Compromiso con la formación de egresados de calidad a nivel Licenciatura y Posgrado.
+• Lealtad a las tareas de la UNAM.
+• liderazgo institucional.
+• Espiritu universitario.
+• Respeto a la diversidad e ideologías.
+• Respeto al medio ambiente.
+• Unidad con las dependencias universitarias.
+• Compañerismo entre el personal de la Facultad."
         />
       </Col>
       <Col xs={24} sm={12} md={6}>
-        <TarjetaIconoTitulo
-          icono={<BankOutlined style={iconStyle} />}
-          titulo="La carrera"
-          descripcion="Información sobre la carrera de Ingeniería en Computación."
+        <TarjetaInformacion
+          icono={<img src={objectives} alt="Objetivos" />}
+          titulo="OBJETIVOS"
+          descripcion="Formar profesionales en Ingeniería en Computación líderes, con conocimientos teóricos y prácticos útiles para la solución de problemas computacionales que la sociedad demanda, comprometidos con las necesidades y desarrollo del país.
+"
         />
       </Col>
       <Col xs={24} sm={12} md={6}>
-        <TarjetaIconoTitulo
-          icono={<TeamOutlined style={iconStyle} />}
-          titulo="Comunidad"
-          descripcion="Nuestra comunidad académica y estudiantil."
+        <TarjetaInformacion
+          icono={<img src={vision} alt="Visión" />}
+          titulo="VISIÓN"
+          descripcion="Ser una carrera de vanguardia que asegure la actualización constante de su planta docente, infraestructura y planes de estudio, para formar Ingenieros en Computación capaces de responder a los cambios que demande el país. 
+"
         />
       </Col>
       <Col xs={24} sm={12} md={6}>
-        <TarjetaIconoTitulo
-          icono={<FileTextOutlined style={iconStyle} />}
-          titulo="Documentos"
-          descripcion="Documentos y trámites de interés."
+        <TarjetaInformacion
+          icono={<img src={mission} alt="Misión" />}
+          titulo="MISIÓN"
+          descripcion="Formar profesionales con un gran espíritu universitario que estén comprometidos con el crecimiento del país, con capacidades para encontrar soluciones innovadoras y con un alto nivel de conocimientos en matemáicas, programación e ingeniería de software, procesamiento de la información, arquitectura de computadoras, redes, seguridad y control.
+"
         />
       </Col>
     </Row>

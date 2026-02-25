@@ -1,4 +1,6 @@
-import { Layout, Menu, Typography, Row, Col } from "antd";
+import { useState } from "react";
+import { Layout, Menu, Typography, Row, Col, Button, Drawer, Grid } from "antd";
+import { MenuOutlined } from "@ant-design/icons";
 import { useNavigate, useLocation, Outlet } from "react-router-dom";
 import logoUnam from "../assets/images/unam.png";
 import logofes from "../assets/images/logofes.png";
@@ -8,8 +10,10 @@ import aniv from "../assets/images/footer/50aniv.png";
 import correo from "../assets/images/footer/mail-icon-white.png";
 import wa from "../assets/images/footer/waicon.png";
 import fb from "../assets/images/footer/facebooicon.png";
+
 const { Header, Content, Footer } = Layout;
 const { Text } = Typography;
+const { useBreakpoint } = Grid;
 
 const items = [
   { key: "/", label: "Inicio" },
@@ -24,6 +28,14 @@ const items = [
 export default function MainLayout() {
   const navigate = useNavigate();
   const location = useLocation();
+  const screens = useBreakpoint();
+  const [drawerAbierto, setDrawerAbierto] = useState(false);
+
+  const esPantallaPequena = !screens.md;
+  const handleItemClick = (key: string) => {
+    navigate(key);
+    setDrawerAbierto(false);
+  };
 
   return (
     <Layout style={{ minHeight: "100vh", width: "100%" }}>
@@ -59,6 +71,7 @@ export default function MainLayout() {
           />
         </div>
         <Text
+          className="header-titulo"
           style={{
             color: "rgba(255,255,255,0.9)",
             fontSize: 17,
@@ -69,21 +82,58 @@ export default function MainLayout() {
         >
           Facultad de Estudios Superiores Aragón
         </Text>
-        <Menu
-          className="nav-menu-principal"
-          theme="dark"
-          mode="horizontal"
-          selectedKeys={[location.pathname]}
-          items={items}
-          onClick={({ key }) => navigate(key)}
-          style={{
-            flex: 1,
-            borderBottom: "none",
-            lineHeight: "64px",
-            minWidth: "auto",
-            justifyContent: "flex-end",
-          }}
-        />
+        {esPantallaPequena ? (
+          <>
+            <div style={{ flex: 1 }} />
+            <Button
+              type="text"
+              icon={<MenuOutlined style={{ fontSize: 22, color: "#fff" }} />}
+              onClick={() => setDrawerAbierto(true)}
+              aria-label="Abrir menú"
+              style={{ flexShrink: 0 }}
+            />
+            <Drawer
+              className="drawer-menu-nav"
+              title="Menú"
+              placement="right"
+              onClose={() => setDrawerAbierto(false)}
+              open={drawerAbierto}
+              styles={{
+                body: { padding: 0, background: "#032047" },
+                header: {
+                  background: "#032047",
+                  color: "#ba9a3a",
+                  borderBottom: "1px solid rgba(186,154,58,0.35)",
+                },
+              }}
+            >
+              <Menu
+                theme="dark"
+                mode="vertical"
+                selectedKeys={[location.pathname]}
+                items={items}
+                onClick={({ key }) => handleItemClick(key)}
+                style={{ borderRight: "none", paddingTop: 8, background: "transparent" }}
+              />
+            </Drawer>
+          </>
+        ) : (
+          <Menu
+            className="nav-menu-principal"
+            theme="dark"
+            mode="horizontal"
+            selectedKeys={[location.pathname]}
+            items={items}
+            onClick={({ key }) => navigate(key)}
+            style={{
+              flex: 1,
+              borderBottom: "none",
+              lineHeight: "64px",
+              minWidth: "auto",
+              justifyContent: "flex-end",
+            }}
+          />
+        )}
       </Header>
       {/* Cabecera con logos */}
       <div
