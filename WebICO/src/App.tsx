@@ -19,6 +19,7 @@ import ProfesoresCorreo from "./views/profesores/correo";
 import Egresados from "./views/Egresados";
 import LigasInteres from "./views/LigasInteres";
 import Cultura from "./views/cultura/cultura";
+import Bibliotecas from "./views/cultura/bibliotecas";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         <Route path="egresados" element={<Egresados />} />
         <Route path="ligas-interes" element={<LigasInteres />} />
         <Route path="cultura" element={<Cultura />} />
+        <Route path="bibliotecas" element={<Bibliotecas />} />
       </Route>
     </Routes>
   );

@@ -40,7 +40,7 @@ export default function LigasInteres() {
             icono={<img src={bibliotecas} alt="Bibliotecas" />}
             titulo="BIBLIOTECAS"
             descripcion="Acceso a las paginas de las bibliotecas de la Universidad."
-            href="https://sites.google.com/aragon.unam.mx/fesaragonico/ligas-de-inter%C3%A9s/bibliotecas?authuser=0"
+            to="/bibliotecas"
           />
         </Col>
       </Row>
