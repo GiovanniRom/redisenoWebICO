@@ -14,16 +14,28 @@ export interface TarjetaInformacionProps {
   readonly titulo: string;
   /** Descripción con texto justificado */
   readonly descripcion?: string;
+  /** Descripción en dos columnas [columnaIzq, columnaDer]. Si se usa, ignora descripcion. */
+  readonly descripcionColumnas?: readonly [string, string];
   /** Ruta a la que navegar al hacer clic (opcional) */
   readonly to?: string;
   readonly className?: string;
   readonly style?: React.CSSProperties;
 }
 
+const textoDescripcionStyle: React.CSSProperties = {
+  fontSize: 15,
+  lineHeight: 1.65,
+  fontWeight: 400,
+  textAlign: "justify",
+  whiteSpace: "pre-line",
+  wordBreak: "break-word",
+};
+
 export default function TarjetaInformacion({
   icono,
   titulo,
   descripcion,
+  descripcionColumnas,
   to,
   className,
   style,
@@ -68,6 +80,8 @@ export default function TarjetaInformacion({
       <div
         className="icono-tarjeta-informacion"
         style={{
+          maxWidth: "50%",
+          maxHeight: "100%",
           width: "90%",
           aspectRatio: "1",
           marginBottom: 16,
@@ -83,28 +97,28 @@ export default function TarjetaInformacion({
       <Text
         style={{
           display: "block",
-          fontSize: 20,
+          fontSize: 21,
           fontWeight: 700,
           textAlign: "center",
-          marginBottom: descripcion ? 8 : 0,
+          marginBottom: descripcion || descripcionColumnas ? 12 : 0,
         }}
       >
         {titulo}
       </Text>
-      {descripcion ? (
-        <Text
-          style={{
-            display: "block",
-            fontSize: 14,
-            lineHeight: 1.6,
-            fontWeight: 400,
-            textAlign: "justify",
-            whiteSpace: "pre-line",
-          }}
+      {descripcionColumnas && (
+        <div
+          className="tarjeta-informacion-dos-columnas"
+          style={{ marginBottom: 16 }}
         >
+          <Text style={textoDescripcionStyle}>{descripcionColumnas[0]}</Text>
+          <Text style={textoDescripcionStyle}>{descripcionColumnas[1]}</Text>
+        </div>
+      )}
+      {!descripcionColumnas && descripcion && (
+        <Text style={{ ...textoDescripcionStyle, marginBottom: 16 }}>
           {descripcion}
         </Text>
-      ) : null}
+      )}
       <div
         style={{
           width: "90%",

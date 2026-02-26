@@ -159,12 +159,26 @@ export default function MainLayout() {
         <img
           src={logofes}
           alt="Logo FES Aragón"
-          style={{ height: "auto", width: "750px", objectFit: "contain" }}
+          className="cabecera-logo-fes"
+          style={{
+            height: "auto",
+            width: "750px",
+            maxWidth: "100%",
+            minWidth: 0,
+            objectFit: "contain",
+          }}
         />
         <img
           src={logoico}
           alt="Logo ICO"
-          style={{ height: "auto", width: "400px", objectFit: "contain" }}
+          className="cabecera-logo-ico"
+          style={{
+            height: "auto",
+            width: "400px",
+            maxWidth: "100%",
+            minWidth: 0,
+            objectFit: "contain",
+          }}
         />
       </div>
       <Content style={{ padding: "24px 16px" }}>

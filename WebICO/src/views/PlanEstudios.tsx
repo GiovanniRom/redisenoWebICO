@@ -21,14 +21,15 @@ export default function PlanEstudios() {
           <TarjetaIconoTitulo
             icono={<img src={perfilingreso} alt="Perfil de ingreso" />}
             titulo="PERFIL DE INGRESO"
-            descripcion="Contenido por semestre y asignaturas."
+            descripcion="Perfil de ingreso a la carrera de Ingeniería en Computación."
           />
         </Col>
+
         <Col xs={24} sm={12} md={8}>
           <TarjetaIconoTitulo
-            icono={<img src={perfilegreso} alt="Perfil de egreso" />}
-            titulo="PERFIL DE EGRESO"
-            descripcion="Asignaturas optativas y líneas de formación."
+            icono={<img src={cuestionario} alt="Cuestionario" />}
+            titulo="CUESTIONARIO"
+            descripcion="Cuestionarios para la actualización del plan de estudios."
           />
         </Col>
       </Row>
@@ -37,14 +38,14 @@ export default function PlanEstudios() {
           <TarjetaIconoTitulo
             icono={<img src={malacurricular} alt="Malla curricular" />}
             titulo="MALLA CURRICULAR"
-            descripcion="Requisitos de ingreso y permanencia."
+            descripcion="Malla curricular de la carrera de Ingeniería en Computación."
           />
         </Col>
         <Col xs={24} sm={12} md={8}>
           <TarjetaIconoTitulo
-            icono={<img src={cuestionario} alt="Cuestionario" />}
-            titulo="CUESTIONARIO"
-            descripcion="Plan de estudios en formato oficial (PDF)."
+            icono={<img src={perfilegreso} alt="Perfil de egreso" />}
+            titulo="PERFIL DE EGRESO"
+            descripcion="Perfil de egreso de la carrera de Ingeniería en Computación."
           />
         </Col>
       </Row>

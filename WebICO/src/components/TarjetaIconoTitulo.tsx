@@ -91,6 +91,7 @@ export default function TarjetaIconoTitulo({
             marginTop: 6,
             lineHeight: 1.4,
             fontWeight: 500,
+            marginBottom: 10,
           }}
         >
           {descripcion}
