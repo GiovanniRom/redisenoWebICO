@@ -646,7 +646,7 @@ export default function AlumnosHorarios() {
         <div
           style={{
             padding: "16px 24px 24px",
-            width: "95%",
+            width: "100%",
             boxSizing: "border-box",
             backgroundColor: "#032047",
             color: "#ba9a3a",

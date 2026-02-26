@@ -27,7 +27,7 @@ export default function AlumnosCalendario() {
             backgroundColor: "#ba9a3a",
             color: "#032047",
             clipPath:
-              "polygon(0 0, 50% 0, 100% calc(50% - 48px), calc(100% - 96px) 100%, 24px 100%, 0 calc(100% - 24px))",
+              "polygon(0 0, 50% 0, 100% calc(50% - 60px), calc(100% - 96px) 100%, 24px 100%, 0 calc(100% - 24px))",
           }}
         >
           <Title
@@ -45,7 +45,7 @@ export default function AlumnosCalendario() {
             backgroundColor: "#032047",
             color: "#ba9a3a",
             clipPath:
-              "polygon(0 0, 50% 0, 100% calc(50% - 48px), calc(100% - 96px) 100%, 24px 100%, 0 calc(100% - 24px))",
+              "polygon(0 0, 50% 0, 100% calc(50% - 60px), calc(100% - 96px) 100%, 24px 100%, 0 calc(100% - 24px))",
           }}
         >
           <Title
