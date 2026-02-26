@@ -627,11 +627,13 @@ export default function AlumnosHorarios() {
       <div style={{ margin: "-10px -10px 0 -10px" }}>
         <div
           style={{
-            padding: "16px 24px",
+            padding: "16px 24px 24px",
             width: "100%",
             boxSizing: "border-box",
             backgroundColor: "#ba9a3a",
             color: "#032047",
+            clipPath:
+              "polygon(0 0, 50% 0, 100% calc(50% - 48px), calc(100% - 96px) 100%, 24px 100%, 0 calc(100% - 24px))",
           }}
         >
           <Title
@@ -643,11 +645,13 @@ export default function AlumnosHorarios() {
         </div>
         <div
           style={{
-            padding: "16px 24px",
-            width: "100%",
+            padding: "16px 24px 24px",
+            width: "95%",
             boxSizing: "border-box",
             backgroundColor: "#032047",
             color: "#ba9a3a",
+            clipPath:
+              "polygon(0 0, 50% 0, 100% calc(50% - 48px), calc(100% - 96px) 100%, 24px 100%, 0 calc(100% - 24px))",
           }}
         >
           <Title
