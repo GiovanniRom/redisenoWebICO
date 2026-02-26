@@ -75,8 +75,15 @@ export default function Bibliotecas() {
         }}
       >
         <Row gutter={[24, 24]}>
-          <Col xs={24} md={10} lg={9}>
-            <div style={{ width: "100%" }}>
+          <Col xs={24} md={10} lg={9} style={{ display: "flex" }}>
+            <div
+              style={{
+                width: "100%",
+                minHeight: "100%",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
               <img
                 src={imagenBibliotecas}
                 alt="Bibliotecas"
@@ -85,6 +92,8 @@ export default function Bibliotecas() {
                   height: "auto",
                   display: "block",
                   objectFit: "cover",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+                  borderRadius: "8px",
                 }}
               />
             </div>
@@ -150,6 +159,9 @@ export default function Bibliotecas() {
                   height: "auto",
                   display: "block",
                   objectFit: "cover",
+                  alignItems: "center",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+                  borderRadius: "8px",
                 }}
               />
             </div>
