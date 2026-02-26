@@ -11,6 +11,7 @@ export default function Profesores() {
           icono={<img src={correo} alt="Correo institucional" />}
           titulo="CORREO INSTITUCIONAL"
           descripcion="Conoce los correos de los profesores de la carrera de Ingeniería en Computación."
+          to="/profesores/correo"
         />
       </Col>
       <Col xs={24} sm={12} md={8}>

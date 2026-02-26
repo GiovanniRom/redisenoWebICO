@@ -11,9 +11,14 @@ import AlumnosTutores from "./views/alumnos/tutores";
 import AlumnosExtraordinarios from "./views/alumnos/extraordinarios";
 import AlumnosFormacion from "./views/alumnos/formacion";
 import PlanEstudios from "./views/PlanEstudios";
+import PlanIngreso from "./views/plan/ingreso";
+import PlanEgreso from "./views/plan/egreso";
+import PlanCuestionario from "./views/plan/cuestionario";
 import Profesores from "./views/Profesores";
+import ProfesoresCorreo from "./views/profesores/correo";
 import Egresados from "./views/Egresados";
 import LigasInteres from "./views/LigasInteres";
+import Cultura from "./views/cultura/cultura";
 
 function App() {
   return (
@@ -33,9 +38,14 @@ function App() {
         />
         <Route path="alumnos/formacion" element={<AlumnosFormacion />} />
         <Route path="plan-estudios" element={<PlanEstudios />} />
+        <Route path="plan/ingreso" element={<PlanIngreso />} />
+        <Route path="plan/egreso" element={<PlanEgreso />} />
+        <Route path="plan/cuestionario" element={<PlanCuestionario />} />
         <Route path="profesores" element={<Profesores />} />
+        <Route path="profesores/correo" element={<ProfesoresCorreo />} />
         <Route path="egresados" element={<Egresados />} />
         <Route path="ligas-interes" element={<LigasInteres />} />
+        <Route path="cultura" element={<Cultura />} />
       </Route>
     </Routes>
   );

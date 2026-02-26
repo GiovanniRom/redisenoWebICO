@@ -14,6 +14,7 @@ export default function LigasInteres() {
             icono={<img src={cultura} alt="Cultura Informática" />}
             titulo="CULTURA INFORMATICA"
             descripcion="Enlaces a boletínes, artículos, videos y material de apoyo."
+            to="/cultura"
           />
         </Col>
         <Col xs={24} sm={12} md={8}>

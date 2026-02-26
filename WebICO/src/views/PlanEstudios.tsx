@@ -23,6 +23,7 @@ export default function PlanEstudios() {
             icono={<img src={perfilingreso} alt="Perfil de ingreso" />}
             titulo="PERFIL DE INGRESO"
             descripcion="Perfil de ingreso a la carrera de Ingeniería en Computación."
+            to="/plan/ingreso"
           />
         </Col>
 
@@ -31,6 +32,7 @@ export default function PlanEstudios() {
             icono={<img src={cuestionario} alt="Cuestionario" />}
             titulo="CUESTIONARIO"
             descripcion="Cuestionarios para la actualización del plan de estudios."
+            to="/plan/cuestionario"
           />
         </Col>
       </Row>
@@ -48,6 +50,7 @@ export default function PlanEstudios() {
             icono={<img src={perfilegreso} alt="Perfil de egreso" />}
             titulo="PERFIL DE EGRESO"
             descripcion="Perfil de egreso de la carrera de Ingeniería en Computación."
+            to="/plan/egreso"
           />
         </Col>
       </Row>
