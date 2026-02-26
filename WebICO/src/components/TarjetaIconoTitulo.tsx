@@ -68,7 +68,7 @@ export default function TarjetaIconoTitulo({
       <div
         className="icono-tarjeta"
         style={{
-          width: "50%",
+          width: "60%",
           aspectRatio: "1",
           marginBottom: 5,
           display: "flex",
