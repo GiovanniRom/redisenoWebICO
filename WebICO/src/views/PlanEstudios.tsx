@@ -1,7 +1,53 @@
-import { Typography } from "antd";
-
-const { Title } = Typography;
+import { Row, Col } from "antd";
+import planestudios from "../assets/images/plan/planicon.png";
+import perfilingreso from "../assets/images/plan/ingresoicon.png";
+import perfilegreso from "../assets/images/plan/egresoicon.png";
+import malacurricular from "../assets/images/plan/mallaicon.png";
+import cuestionario from "../assets/images/plan/cuestionarioicon.png";
+import TarjetaIconoTitulo from "../components/TarjetaIconoTitulo";
 
 export default function PlanEstudios() {
-  return <Title level={2}>Plan de estudios</Title>;
+  return (
+    <>
+      <Row gutter={[24, 24]} justify="center">
+        <Col xs={24} sm={12} md={8}>
+          <TarjetaIconoTitulo
+            icono={<img src={planestudios} alt="Plan de estudios" />}
+            titulo="PLAN DE ESTUDIOS"
+            descripcion="Estructura y secuencia del plan de estudios."
+          />
+        </Col>
+        <Col xs={24} sm={12} md={8}>
+          <TarjetaIconoTitulo
+            icono={<img src={perfilingreso} alt="Perfil de ingreso" />}
+            titulo="PERFIL DE INGRESO"
+            descripcion="Contenido por semestre y asignaturas."
+          />
+        </Col>
+        <Col xs={24} sm={12} md={8}>
+          <TarjetaIconoTitulo
+            icono={<img src={perfilegreso} alt="Perfil de egreso" />}
+            titulo="PERFIL DE EGRESO"
+            descripcion="Asignaturas optativas y líneas de formación."
+          />
+        </Col>
+      </Row>
+      <Row gutter={[24, 24]} justify="center" style={{ marginTop: 24 }}>
+        <Col xs={24} sm={12} md={8}>
+          <TarjetaIconoTitulo
+            icono={<img src={malacurricular} alt="Malla curricular" />}
+            titulo="MALLA CURRICULAR"
+            descripcion="Requisitos de ingreso y permanencia."
+          />
+        </Col>
+        <Col xs={24} sm={12} md={8}>
+          <TarjetaIconoTitulo
+            icono={<img src={cuestionario} alt="Cuestionario" />}
+            titulo="CUESTIONARIO"
+            descripcion="Plan de estudios en formato oficial (PDF)."
+          />
+        </Col>
+      </Row>
+    </>
+  );
 }
