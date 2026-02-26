@@ -15,6 +15,7 @@ export default function PlanEstudios() {
             icono={<img src={planestudios} alt="Plan de estudios" />}
             titulo="PLAN DE ESTUDIOS"
             descripcion="Estructura y secuencia del plan de estudios."
+            href="https://drive.google.com/file/d/1mnPvcATbixSNaC_qd6pNSgXWvtD2N_1M/view"
           />
         </Col>
         <Col xs={24} sm={12} md={8}>
@@ -39,6 +40,7 @@ export default function PlanEstudios() {
             icono={<img src={malacurricular} alt="Malla curricular" />}
             titulo="MALLA CURRICULAR"
             descripcion="Malla curricular de la carrera de Ingeniería en Computación."
+            href="https://ingenierias-aragon.net/ICO/PlanEstudios2119/"
           />
         </Col>
         <Col xs={24} sm={12} md={8}>

@@ -13,17 +13,27 @@ export interface TarjetaIconoTituloProps {
   readonly icono: ReactNode;
   readonly titulo: string;
   readonly descripcion?: string;
-  /** Ruta a la que navegar al hacer clic en la tarjeta (ej. /informacion) */
+  /** Ruta interna a la que navegar al hacer clic (ej. /informacion) */
   readonly to?: string;
+  /** Enlace externo; al hacer clic abre en nueva pestaña. Si se usa, no usar to. */
+  readonly href?: string;
   readonly className?: string;
   readonly style?: React.CSSProperties;
 }
+
+const linkStyle: React.CSSProperties = {
+  display: "block",
+  textDecoration: "none",
+  color: "inherit",
+  cursor: "pointer",
+};
 
 export default function TarjetaIconoTitulo({
   icono,
   titulo,
   descripcion,
   to,
+  href,
   className,
   style,
 }: TarjetaIconoTituloProps) {
@@ -110,20 +120,22 @@ export default function TarjetaIconoTitulo({
     </Card>
   );
 
-  if (to) {
+  if (href) {
     return (
-      <Link
-        to={to}
-        style={{
-          display: "block",
-          textDecoration: "none",
-          color: "inherit",
-          cursor: "pointer",
-        }}
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={linkStyle}
+        aria-label={titulo}
       >
         {cardContent}
-      </Link>
+      </a>
     );
+  }
+
+  if (to) {
+    return <Link to={to} style={linkStyle}>{cardContent}</Link>;
   }
 
   return cardContent;
